@@ -310,6 +310,38 @@
       line-height: 1.45;
     }
 
+    .system-stack {
+      display: grid;
+      gap: 11px;
+      margin-top: 4px;
+    }
+
+    .stack-row {
+      display: grid;
+      grid-template-columns: 112px 1fr;
+      gap: 12px;
+      padding-bottom: 10px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .stack-row:last-child {
+      padding-bottom: 0;
+      border-bottom: 0;
+    }
+
+    .stack-layer {
+      color: var(--ink);
+      font-weight: 700;
+      font-size: 0.86rem;
+      line-height: 1.35;
+    }
+
+    .stack-detail {
+      color: var(--muted);
+      font-size: 0.86rem;
+      line-height: 1.45;
+    }
+
     .tool-tags {
       display: flex;
       flex-wrap: wrap;
@@ -853,8 +885,29 @@
           </div>
 
           <div class="side-block">
-            <div class="side-label">Working stack</div>
-            <p>ESP32 · STM32 · FreeRTOS · KiCad · FreeCAD · ADS1115 · MCP ADCs · MQTT · GSM/4G · YOLOv8 · CVAT · IMUs</p>
+            <div class="side-label">System coverage</div>
+            <div class="system-stack">
+              <div class="stack-row">
+                <div class="stack-layer">Control layer</div>
+                <div class="stack-detail">ESP32, STM32, FreeRTOS, C/C++, inter-core sync, UART/I²C/SPI.</div>
+              </div>
+              <div class="stack-row">
+                <div class="stack-layer">Sensing layer</div>
+                <div class="stack-detail">IMUs, thermistors, external ADCs, calibration, signal-chain debugging.</div>
+              </div>
+              <div class="stack-row">
+                <div class="stack-layer">Hardware layer</div>
+                <div class="stack-detail">KiCad PCBs, sensor interfaces, GSM/4G modules, power and field reliability.</div>
+              </div>
+              <div class="stack-row">
+                <div class="stack-layer">Physical layer</div>
+                <div class="stack-detail">FreeCAD, mechanisms, enclosures, 3D printing, fitment, DFM/DFA.</div>
+              </div>
+              <div class="stack-row">
+                <div class="stack-layer">Perception layer</div>
+                <div class="stack-detail">YOLOv8, CVAT datasets, camera-to-actuation robotics prototypes.</div>
+              </div>
+            </div>
           </div>
         </aside>
       </div>
